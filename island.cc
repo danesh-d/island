@@ -62,7 +62,16 @@ class grid {
           if (isol) {
             cout << isIsolated(j, i, g) << "  ";
           } else {
-            cout << getElem(j, i, g) << "  ";
+            char e = getElem(j, i, g);
+            string s = "";
+
+            if (e == '+') {
+              s =  "\033[0;32m+\033[0m";
+            } else {
+              s = e;
+            }
+
+            cout << s << "  ";
           }
         }
 
